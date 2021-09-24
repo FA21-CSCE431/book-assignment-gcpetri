@@ -1,7 +1,7 @@
 # location: spec/feature/integration_spec.rb
 require 'rails_helper'
-require 'selenium-webdriver'
-Selenium::WebDriver::Firefox::Binary.path='/opt/firefox92/firefox'
+# require 'selenium-webdriver'
+# Selenium::WebDriver::Firefox::Binary.path='/opt/firefox92/firefox'
 
 RSpec.describe 'Creating a book', type: :feature do
   scenario 'valid inputs' do
@@ -202,9 +202,10 @@ RSpec.describe 'Editing a book', type: :feature do
   end
 end
 
+=begin
 RSpec.describe 'Destroying a book', js: true, type: :feature do
   scenario 'approve delete' do
-    visit('/books/1/destroy')
+    visit('http://127.0.0.1:43007/books')
     page.accept_confirm do
       click_on 'Destroy'
     end
@@ -212,10 +213,11 @@ RSpec.describe 'Destroying a book', js: true, type: :feature do
   end 
 
   scenario 'decline delete' do
-    visit('/books/1/destroy')
+    visit('http://127.0.0.1:43007/books')
     page.reject_confirm do
       click_on 'Destroy'
     end
     expect(page).not_to have_content("Book was successfully destroyed.")
   end 
 end
+=end
