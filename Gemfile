@@ -60,3 +60,6 @@ gem 'rexml'
 
 # run this 
 # docker run --rm -it --volume "${PWD}:/csce431" -e DATABASE_USER=test_app -e DATABASE_PASSWORD=test_password -p 3000:3000 dmartinez05/ruby_rails_postgresql:latest
+
+# get back in if exited
+#  docker exec -it modest_sinoussi bash
