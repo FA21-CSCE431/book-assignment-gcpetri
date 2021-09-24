@@ -21,9 +21,13 @@ class Book < ApplicationRecord
 
     def validatePublishedDate
         logger.debug "String Date: #{published_date}"
-        date = Date.parse(published_date.to_s) # rescue errors.add(:published_date, 'must be a valid date')
-        if !date.before?(Date.today)
-            errors.add(:published_date, "must be before the current date")
+        begin
+            date = Date.parse(published_date.to_s)
+            if !date.before?(Date.today)
+                errors.add(:published_date, "must be before the current date")
+            end
+        rescue Exception => e
+            errors.add(:published_date, 'must enter a date')
         end
     end
 end
