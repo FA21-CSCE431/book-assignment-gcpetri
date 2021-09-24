@@ -13,7 +13,22 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, placeholder: "Lord of the Rings" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :author %>
+    <%= form.text_field :author, placeholder: "J.R Tolkein" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_file :price, placeholder: "0.00" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :published_date %>
+    <%= form.date_field :published_date %>
   </div>
 
   <div class="actions">
